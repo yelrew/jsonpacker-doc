@@ -133,8 +133,10 @@ New encoder types are expected to be released soon.</p>
 cmake --build build
 </pre></div>
 </div>
-<p>where the variable <code class="docutils literal notranslate"><span class="pre">WITH_SPHINX</span></code> enables the generation of a Sphinx-based documentation.
-If this variable is set to OFF, a Doxgen documentation will be built instead.</p>
+<p>where the flag <code class="docutils literal notranslate"><span class="pre">-DWITH_SPHINX=ON</span></code> causes <a class="reference external" href="https://www.sphinx-doc.org/">Sphinx</a> to render
+the final HTML documentation. If this variable is set to OFF, Doxgen will be used instead.
+Note that Sphinx depends on Doxygen itself and <a class="reference external" href="https://www.breathe-doc.org/">Breathe</a> to
+act as a bridge between them.</p>
 </section>
 <section id="tests">
 <h3>Tests<a class="headerlink" href="#tests" title="Permalink to this headline"></a></h3>
