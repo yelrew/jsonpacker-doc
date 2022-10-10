@@ -70,9 +70,24 @@
 <section id="json-packer">
 <h2>JSON Packer<a class="headerlink" href="#json-packer" title="Permalink to this headline"></a></h2>
 <p><strong>A JSON binary packer</strong>.</p>
+<table class="colwidths-auto docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>URL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Repository:</strong></p></td>
+<td><p>https://github.com/yelrew/jsonpacker</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Documentation:</strong></p></td>
+<td><p>https://yelrew.github.io/jsonpacker-doc</p></td>
+</tr>
+</tbody>
+</table>
 <section id="synopsis">
 <h3>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline"></a></h3>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Usage: jsonpackerc [OPTION...] &lt;JSON file&gt;
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Usage: jsonpacker [OPTION...] &lt;JSON file&gt;
 JSON Packer -- A program to encode JSON key-valued objects in binary format.
 
   -d, --one-dict             Use a single dicionary for all records (optional)
@@ -90,14 +105,16 @@ JSON Packer -- A program to encode JSON key-valued objects in binary format.
   -V, --version              Print program version
 </pre></div>
 </div>
-<p><em>JSON packer</em> is a small utility that reads sequences of JSON records and encode them in  binary format.
-<em>JSON packer</em> makes uses of <a class="reference external" href="https://github.com/DaveGamble/cJSON">cJSON</a> to parse the objects.</p>
-<p>Each JSON key-value record is split into two new pairs: an <code class="docutils literal notranslate"><span class="pre">encValue</span></code> pair,
+<p><em>JSON Packer</em> is a small utility that reads sequences of JSON records and encode them in  binary format.
+<em>JSON Packer</em> makes uses of <a class="reference external" href="https://github.com/DaveGamble/cJSON">cJSON</a> to parse the objects.</p>
+<p>Each JSON key-value record is split into two pairs: an <code class="docutils literal notranslate"><span class="pre">encValue</span></code> pair,
 whith the keys replaced by “numeric” pre-assigned values; and a <code class="docutils literal notranslate"><span class="pre">keyEnc</span></code>
 pair, with a mapping between the original keys and the new encoded keys.
+<code class="docutils literal notranslate"><span class="pre">JSON</span> <span class="pre">Packer</span></code> uses a hash table from the Apache Portable Runtime Librar (APR)
+to store the dicionary.
 The encoded values and keys can be optionally written to a file stream.</p>
 <p>By default, <em>JSON packer</em> adopts the
-<a class="reference external" href="https://www.itu.int/en/ITU-T/asn1/Pages/introduction.aspx">ASN.1</a> <em>DER</em> format to encode the records.
+<a class="reference external" href="https://www.itu.int/en/ITU-T/asn1/Pages/introduction.aspx">ASN.1</a> <em>DER</em> codec to encode the records.
 New encoder types are expected to be released soon.</p>
 </section>
 <section id="basic-usage">
