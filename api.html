@@ -143,7 +143,7 @@
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv418JSONp_EncodeRecordP10apr_hash_tP5cJSONP9JSONpArgsP9Asn1ArrayP9Asn1Array">
-<span id="_CPPv318JSONp_EncodeRecordP10apr_hash_tP5cJSONP9JSONpArgsP9Asn1ArrayP9Asn1Array"></span><span id="_CPPv218JSONp_EncodeRecordP10apr_hash_tP5cJSONP9JSONpArgsP9Asn1ArrayP9Asn1Array"></span><span id="JSONp_EncodeRecord__apr_hash_tP.cJSONP.JSONpArgsP.Asn1ArrayP.Asn1ArrayP"></span><span class="target" id="group__JSONp_1ga417544420ae66c5ee9b25d35714a5f57"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">JSONp_EncodeRecord</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">apr_hash_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">dict</span></span>, <span class="n"><span class="pre">cJSON</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">record</span></span>, <span class="n"><span class="pre">JSONpArgs</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">jsonp_args</span></span>, <a class="reference internal" href="#_CPPv49Asn1Array" title="Asn1Array"><span class="n"><span class="pre">Asn1Array</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">encValue</span></span>, <a class="reference internal" href="#_CPPv49Asn1Array" title="Asn1Array"><span class="n"><span class="pre">Asn1Array</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">keyEnc</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418JSONp_EncodeRecordP10apr_hash_tP5cJSONP9JSONpArgsP9Asn1ArrayP9Asn1Array" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv318JSONp_EncodeRecordP10apr_hash_tP5cJSONP9JSONpArgsP9Asn1ArrayP9Asn1Array"></span><span id="_CPPv218JSONp_EncodeRecordP10apr_hash_tP5cJSONP9JSONpArgsP9Asn1ArrayP9Asn1Array"></span><span id="JSONp_EncodeRecord__apr_hash_tP.cJSONP.JSONpArgsP.Asn1ArrayP.Asn1ArrayP"></span><span class="target" id="group__JSONp_1ga417544420ae66c5ee9b25d35714a5f57"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">JSONp_EncodeRecord</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">apr_hash_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">dict</span></span>, <span class="n"><span class="pre">cJSON</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">record</span></span>, <span class="n"><span class="pre">JSONpArgs</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">jsonp_args</span></span>, <span class="n"><span class="pre">Asn1Array</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">encValue</span></span>, <span class="n"><span class="pre">Asn1Array</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">keyEnc</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418JSONp_EncodeRecordP10apr_hash_tP5cJSONP9JSONpArgsP9Asn1ArrayP9Asn1Array" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Encodes a JSON record and the corresponding numeric keys in binary format. </p>
 <p>For a given JSON record, splits each key-value pair into an <code class="docutils literal notranslate"><span class="pre">encValue</span></code> pair, where the keys are replaced by <code class="docutils literal notranslate"><span class="pre">numeric</span></code> pre-assigned values, and a <code class="docutils literal notranslate"><span class="pre">keyEnc</span></code> pair, with a mapping between the original keys and the new encoded keys.</p>
 <dl class="field-list simple">
@@ -152,12 +152,44 @@
 <li><p><strong>dict</strong> – Dictionary (hash table) where the entries are the keys and the values are the encrypted keys </p></li>
 <li><p><strong>record</strong> – JSON object (key value pairs) </p></li>
 <li><p><strong>jsonp_args</strong> – JSONp command-line arguments</p></li>
-<li><p><strong>encValue</strong> – Pointer to an <a class="reference internal" href="#structAsn1Array"><span class="std std-ref">Asn1Array</span></a> containing the resulting <code class="docutils literal notranslate"><span class="pre">numeric</span> <span class="pre">key</span></code> : <code class="docutils literal notranslate"><span class="pre">value</span></code> binary encoding </p></li>
-<li><p><strong>keyEnc</strong> – Pointer to an <a class="reference internal" href="#structAsn1Array"><span class="std std-ref">Asn1Array</span></a> containing the resulting <code class="docutils literal notranslate"><span class="pre">key</span></code> : <code class="docutils literal notranslate"><span class="pre">numeric</span> <span class="pre">key</span></code> binary encoding</p></li>
+<li><p><strong>encValue</strong> – Pointer to an Asn1Array containing the resulting <code class="docutils literal notranslate"><span class="pre">numeric</span> <span class="pre">key</span></code> : <code class="docutils literal notranslate"><span class="pre">value</span></code> binary encoding </p></li>
+<li><p><strong>keyEnc</strong> – Pointer to an Asn1Array containing the resulting <code class="docutils literal notranslate"><span class="pre">key</span></code> : <code class="docutils literal notranslate"><span class="pre">numeric</span> <span class="pre">key</span></code> binary encoding</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>int return status </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv419JSONp_PrintEncodingP10apr_hash_tPK5cJSONP9JSONpArgs">
+<span id="_CPPv319JSONp_PrintEncodingP10apr_hash_tPK5cJSONP9JSONpArgs"></span><span id="_CPPv219JSONp_PrintEncodingP10apr_hash_tPK5cJSONP9JSONpArgs"></span><span id="JSONp_PrintEncoding__apr_hash_tP.cJSONCP.JSONpArgsP"></span><span class="target" id="group__JSONp_1gac0799f6cd0a8f397852b6fbe1fe67429"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">JSONp_PrintEncoding</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">apr_hash_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">dict</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">cJSON</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">record</span></span>, <span class="n"><span class="pre">JSONpArgs</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">jsonp_args</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419JSONp_PrintEncodingP10apr_hash_tPK5cJSONP9JSONpArgs" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Prints the record encoding (encoded record and dictionary) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>record</strong> – The cJSON object containing a record </p></li>
+<li><p><strong>dict</strong> – The ARP dictionary with key-value (string-int) pairs </p></li>
+<li><p><strong>jsonp_args</strong> – Pointer to the program’s options structure </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>int exit code </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv415JSONp_PrintDictP10apr_hash_t">
+<span id="_CPPv315JSONp_PrintDictP10apr_hash_t"></span><span id="_CPPv215JSONp_PrintDictP10apr_hash_t"></span><span id="JSONp_PrintDict__apr_hash_tP"></span><span class="target" id="group__JSONp_1gaed512122f05f09d2c82b5d2cd9d3d4f7"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">JSONp_PrintDict</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">apr_hash_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">dict</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415JSONp_PrintDictP10apr_hash_t" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Prints the full dict. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dict</strong> – The ARP dictionary with the key-value (string-long) pairs </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>int exit code </p>
 </dd>
 </dl>
 </dd></dl>
@@ -187,20 +219,6 @@
 </dd></dl>
 
 <dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv415JSONp_PrintDictP10apr_hash_t">
-<span id="_CPPv315JSONp_PrintDictP10apr_hash_t"></span><span id="_CPPv215JSONp_PrintDictP10apr_hash_t"></span><span id="JSONp_PrintDict__apr_hash_tP"></span><span class="target" id="group__JSONp_1gaed512122f05f09d2c82b5d2cd9d3d4f7"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">JSONp_PrintDict</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">apr_hash_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">dict</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415JSONp_PrintDictP10apr_hash_t" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Prints the full dict. </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>dict</strong> – The ARP dictionary with the key-value (string-long) pairs </p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>int exit code </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv417JSONp_cJSON_printPK5cJSONP9JSONpArgs">
 <span id="_CPPv317JSONp_cJSON_printPK5cJSONP9JSONpArgs"></span><span id="_CPPv217JSONp_cJSON_printPK5cJSONP9JSONpArgs"></span><span id="JSONp_cJSON_print__cJSONCP.JSONpArgsP"></span><span class="target" id="group__JSONp_1ga6ff4e1708e7bd11f25d8f62901de5668"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">JSONp_cJSON_print</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">cJSON</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">record</span></span>, <span class="n"><span class="pre">JSONpArgs</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">jsonp_args</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417JSONp_cJSON_printPK5cJSONP9JSONpArgs" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Prints the JSON object which holds a single record. </p>
@@ -208,24 +226,6 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>record</strong> – cJSON object containing the record </p></li>
-<li><p><strong>jsonp_args</strong> – Pointer to the program’s options structure </p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>int exit code </p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="cpp function">
-<dt class="sig sig-object cpp" id="_CPPv419JSONp_PrintEncodingP10apr_hash_tPK5cJSONP9JSONpArgs">
-<span id="_CPPv319JSONp_PrintEncodingP10apr_hash_tPK5cJSONP9JSONpArgs"></span><span id="_CPPv219JSONp_PrintEncodingP10apr_hash_tPK5cJSONP9JSONpArgs"></span><span id="JSONp_PrintEncoding__apr_hash_tP.cJSONCP.JSONpArgsP"></span><span class="target" id="group__JSONp_1gac0799f6cd0a8f397852b6fbe1fe67429"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">JSONp_PrintEncoding</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">apr_hash_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">dict</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">cJSON</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">record</span></span>, <span class="n"><span class="pre">JSONpArgs</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">jsonp_args</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419JSONp_PrintEncodingP10apr_hash_tPK5cJSONP9JSONpArgs" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Prints the record encoding (encoded record and dictionary) </p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>record</strong> – The cJSON object containing a record </p></li>
-<li><p><strong>dict</strong> – The ARP dictionary with key-value (string-int) pairs </p></li>
 <li><p><strong>jsonp_args</strong> – Pointer to the program’s options structure </p></li>
 </ul>
 </dd>
@@ -270,214 +270,10 @@
 
 </div>
 <div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric" id="breathe-section-title-enums">Enums</p>
-<dl class="cpp enum">
-<dt class="sig sig-object cpp" id="_CPPv410ASN1_Class">
-<span id="_CPPv310ASN1_Class"></span><span id="_CPPv210ASN1_Class"></span><span class="target" id="group__JSONp__ASN1_1ga88ac2453c959368acf2fa815e5aee391"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_Class</span></span></span><a class="headerlink" href="#_CPPv410ASN1_Class" title="Permalink to this definition"></a><br /></dt>
-<dd><p>ASN1_Class. Default ASN1 classes values </p>
-<p><em>Values:</em></p>
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N10ASN1_Class20ASN1_CLASS_UNIVERSALE">
-<span id="_CPPv3N10ASN1_Class20ASN1_CLASS_UNIVERSALE"></span><span id="_CPPv2N10ASN1_Class20ASN1_CLASS_UNIVERSALE"></span><span class="target" id="group__JSONp__ASN1_1gga88ac2453c959368acf2fa815e5aee391a15f3d888c0f46e6b6ca599237b9aa13b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_CLASS_UNIVERSAL</span></span></span><a class="headerlink" href="#_CPPv4N10ASN1_Class20ASN1_CLASS_UNIVERSALE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N10ASN1_Class22ASN1_CLASS_APPLICATIONE">
-<span id="_CPPv3N10ASN1_Class22ASN1_CLASS_APPLICATIONE"></span><span id="_CPPv2N10ASN1_Class22ASN1_CLASS_APPLICATIONE"></span><span class="target" id="group__JSONp__ASN1_1gga88ac2453c959368acf2fa815e5aee391a5acdb5497e6806a25193de73ba49a425"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_CLASS_APPLICATION</span></span></span><a class="headerlink" href="#_CPPv4N10ASN1_Class22ASN1_CLASS_APPLICATIONE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N10ASN1_Class18ASN1_CLASS_PRIVATEE">
-<span id="_CPPv3N10ASN1_Class18ASN1_CLASS_PRIVATEE"></span><span id="_CPPv2N10ASN1_Class18ASN1_CLASS_PRIVATEE"></span><span class="target" id="group__JSONp__ASN1_1gga88ac2453c959368acf2fa815e5aee391a800f05ddba0a410a6006f38720101429"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_CLASS_PRIVATE</span></span></span><a class="headerlink" href="#_CPPv4N10ASN1_Class18ASN1_CLASS_PRIVATEE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N10ASN1_Class21ASN1_CLASS_STRUCTUREDE">
-<span id="_CPPv3N10ASN1_Class21ASN1_CLASS_STRUCTUREDE"></span><span id="_CPPv2N10ASN1_Class21ASN1_CLASS_STRUCTUREDE"></span><span class="target" id="group__JSONp__ASN1_1gga88ac2453c959368acf2fa815e5aee391aef4f4e77d5fbfe4345f9cdbe6803b6c2"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_CLASS_STRUCTURED</span></span></span><a class="headerlink" href="#_CPPv4N10ASN1_Class21ASN1_CLASS_STRUCTUREDE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="cpp enum">
-<dt class="sig sig-object cpp" id="_CPPv49ASN1_Type">
-<span id="_CPPv39ASN1_Type"></span><span id="_CPPv29ASN1_Type"></span><span class="target" id="group__JSONp__ASN1_1gae0dad8075dae96c4e46e18dd5d753eec"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_Type</span></span></span><a class="headerlink" href="#_CPPv49ASN1_Type" title="Permalink to this definition"></a><br /></dt>
-<dd><p>ASN1_Type. Default ASN1 types values </p>
-<p><em>Values:</em></p>
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N9ASN1_Type17ASN1_TYPE_INTEGERE">
-<span id="_CPPv3N9ASN1_Type17ASN1_TYPE_INTEGERE"></span><span id="_CPPv2N9ASN1_Type17ASN1_TYPE_INTEGERE"></span><span class="target" id="group__JSONp__ASN1_1ggae0dad8075dae96c4e46e18dd5d753eecaf49fe8465a80ebfbe92fe0f0622ec994"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_TYPE_INTEGER</span></span></span><a class="headerlink" href="#_CPPv4N9ASN1_Type17ASN1_TYPE_INTEGERE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N9ASN1_Type17ASN1_TYPE_BOOLEANE">
-<span id="_CPPv3N9ASN1_Type17ASN1_TYPE_BOOLEANE"></span><span id="_CPPv2N9ASN1_Type17ASN1_TYPE_BOOLEANE"></span><span class="target" id="group__JSONp__ASN1_1ggae0dad8075dae96c4e46e18dd5d753eeca6e8bd3d6d3cfdc39ccc2891743560462"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_TYPE_BOOLEAN</span></span></span><a class="headerlink" href="#_CPPv4N9ASN1_Type17ASN1_TYPE_BOOLEANE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N9ASN1_Type18ASN1_TYPE_SEQUENCEE">
-<span id="_CPPv3N9ASN1_Type18ASN1_TYPE_SEQUENCEE"></span><span id="_CPPv2N9ASN1_Type18ASN1_TYPE_SEQUENCEE"></span><span class="target" id="group__JSONp__ASN1_1ggae0dad8075dae96c4e46e18dd5d753eecaf6223adf2132054146cf838b14c593ea"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_TYPE_SEQUENCE</span></span></span><a class="headerlink" href="#_CPPv4N9ASN1_Type18ASN1_TYPE_SEQUENCEE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N9ASN1_Type20ASN1_TYPE_BIT_STRINGE">
-<span id="_CPPv3N9ASN1_Type20ASN1_TYPE_BIT_STRINGE"></span><span id="_CPPv2N9ASN1_Type20ASN1_TYPE_BIT_STRINGE"></span><span class="target" id="group__JSONp__ASN1_1ggae0dad8075dae96c4e46e18dd5d753eecab40c213cd2fda439f157e8e4523d020c"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_TYPE_BIT_STRING</span></span></span><a class="headerlink" href="#_CPPv4N9ASN1_Type20ASN1_TYPE_BIT_STRINGE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N9ASN1_Type22ASN1_TYPE_OCTET_STRINGE">
-<span id="_CPPv3N9ASN1_Type22ASN1_TYPE_OCTET_STRINGE"></span><span id="_CPPv2N9ASN1_Type22ASN1_TYPE_OCTET_STRINGE"></span><span class="target" id="group__JSONp__ASN1_1ggae0dad8075dae96c4e46e18dd5d753eecacdfe5b0b233bce2f5388d3693bf7b602"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_TYPE_OCTET_STRING</span></span></span><a class="headerlink" href="#_CPPv4N9ASN1_Type22ASN1_TYPE_OCTET_STRINGE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N9ASN1_Type21ASN1_TYPE_SEQUENCE_OFE">
-<span id="_CPPv3N9ASN1_Type21ASN1_TYPE_SEQUENCE_OFE"></span><span id="_CPPv2N9ASN1_Type21ASN1_TYPE_SEQUENCE_OFE"></span><span class="target" id="group__JSONp__ASN1_1ggae0dad8075dae96c4e46e18dd5d753eecaa25db08de66eb077f6c6b4320c539a7b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_TYPE_SEQUENCE_OF</span></span></span><a class="headerlink" href="#_CPPv4N9ASN1_Type21ASN1_TYPE_SEQUENCE_OFE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N9ASN1_Type19ASN1_TYPE_OBJECT_IDE">
-<span id="_CPPv3N9ASN1_Type19ASN1_TYPE_OBJECT_IDE"></span><span id="_CPPv2N9ASN1_Type19ASN1_TYPE_OBJECT_IDE"></span><span class="target" id="group__JSONp__ASN1_1ggae0dad8075dae96c4e46e18dd5d753eecacf487480609cb90e7cd6f772fc4406a4"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_TYPE_OBJECT_ID</span></span></span><a class="headerlink" href="#_CPPv4N9ASN1_Type19ASN1_TYPE_OBJECT_IDE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N9ASN1_Type13ASN1_TYPE_ANYE">
-<span id="_CPPv3N9ASN1_Type13ASN1_TYPE_ANYE"></span><span id="_CPPv2N9ASN1_Type13ASN1_TYPE_ANYE"></span><span class="target" id="group__JSONp__ASN1_1ggae0dad8075dae96c4e46e18dd5d753eecaa26a3bb3655f4bd65fb6e278ca7e056a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_TYPE_ANY</span></span></span><a class="headerlink" href="#_CPPv4N9ASN1_Type13ASN1_TYPE_ANYE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N9ASN1_Type13ASN1_TYPE_SETE">
-<span id="_CPPv3N9ASN1_Type13ASN1_TYPE_SETE"></span><span id="_CPPv2N9ASN1_Type13ASN1_TYPE_SETE"></span><span class="target" id="group__JSONp__ASN1_1ggae0dad8075dae96c4e46e18dd5d753eeca9b2fa570f44ed585417c69fdeead6efa"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_TYPE_SET</span></span></span><a class="headerlink" href="#_CPPv4N9ASN1_Type13ASN1_TYPE_SETE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N9ASN1_Type16ASN1_TYPE_SET_OFE">
-<span id="_CPPv3N9ASN1_Type16ASN1_TYPE_SET_OFE"></span><span id="_CPPv2N9ASN1_Type16ASN1_TYPE_SET_OFE"></span><span class="target" id="group__JSONp__ASN1_1ggae0dad8075dae96c4e46e18dd5d753eeca627db59c4527e9dcccb67ba30e116ce2"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_TYPE_SET_OF</span></span></span><a class="headerlink" href="#_CPPv4N9ASN1_Type16ASN1_TYPE_SET_OFE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N9ASN1_Type21ASN1_TYPE_DEFINITIONSE">
-<span id="_CPPv3N9ASN1_Type21ASN1_TYPE_DEFINITIONSE"></span><span id="_CPPv2N9ASN1_Type21ASN1_TYPE_DEFINITIONSE"></span><span class="target" id="group__JSONp__ASN1_1ggae0dad8075dae96c4e46e18dd5d753eeca186b44193909c03d493304745379eb33"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_TYPE_DEFINITIONS</span></span></span><a class="headerlink" href="#_CPPv4N9ASN1_Type21ASN1_TYPE_DEFINITIONSE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N9ASN1_Type14ASN1_TYPE_REALE">
-<span id="_CPPv3N9ASN1_Type14ASN1_TYPE_REALE"></span><span id="_CPPv2N9ASN1_Type14ASN1_TYPE_REALE"></span><span class="target" id="group__JSONp__ASN1_1ggae0dad8075dae96c4e46e18dd5d753eecaa4e686fadd7fa773a019944aa7402273"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_TYPE_REAL</span></span></span><a class="headerlink" href="#_CPPv4N9ASN1_Type14ASN1_TYPE_REALE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N9ASN1_Type23ASN1_TYPE_GENERALSTRINGE">
-<span id="_CPPv3N9ASN1_Type23ASN1_TYPE_GENERALSTRINGE"></span><span id="_CPPv2N9ASN1_Type23ASN1_TYPE_GENERALSTRINGE"></span><span class="target" id="group__JSONp__ASN1_1ggae0dad8075dae96c4e46e18dd5d753eecac2674b55b4596bf832527745cc363c6f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_TYPE_GENERALSTRING</span></span></span><a class="headerlink" href="#_CPPv4N9ASN1_Type23ASN1_TYPE_GENERALSTRINGE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N9ASN1_Type24ASN1_TYPE_NUMERIC_STRINGE">
-<span id="_CPPv3N9ASN1_Type24ASN1_TYPE_NUMERIC_STRINGE"></span><span id="_CPPv2N9ASN1_Type24ASN1_TYPE_NUMERIC_STRINGE"></span><span class="target" id="group__JSONp__ASN1_1ggae0dad8075dae96c4e46e18dd5d753eeca6c647c8daf9c7ee9529bc7aae8fa5dff"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_TYPE_NUMERIC_STRING</span></span></span><a class="headerlink" href="#_CPPv4N9ASN1_Type24ASN1_TYPE_NUMERIC_STRINGE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N9ASN1_Type20ASN1_TYPE_IA5_STRINGE">
-<span id="_CPPv3N9ASN1_Type20ASN1_TYPE_IA5_STRINGE"></span><span id="_CPPv2N9ASN1_Type20ASN1_TYPE_IA5_STRINGE"></span><span class="target" id="group__JSONp__ASN1_1ggae0dad8075dae96c4e46e18dd5d753eecad887e79aeb6c291ce2c631405bb8d060"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_TYPE_IA5_STRING</span></span></span><a class="headerlink" href="#_CPPv4N9ASN1_Type20ASN1_TYPE_IA5_STRINGE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N9ASN1_Type26ASN1_TYPE_PRINTABLE_STRINGE">
-<span id="_CPPv3N9ASN1_Type26ASN1_TYPE_PRINTABLE_STRINGE"></span><span id="_CPPv2N9ASN1_Type26ASN1_TYPE_PRINTABLE_STRINGE"></span><span class="target" id="group__JSONp__ASN1_1ggae0dad8075dae96c4e46e18dd5d753eecab8c073a8ddd8bb70bf652a5c3366319e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_TYPE_PRINTABLE_STRING</span></span></span><a class="headerlink" href="#_CPPv4N9ASN1_Type26ASN1_TYPE_PRINTABLE_STRINGE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N9ASN1_Type21ASN1_TYPE_UTF8_STRINGE">
-<span id="_CPPv3N9ASN1_Type21ASN1_TYPE_UTF8_STRINGE"></span><span id="_CPPv2N9ASN1_Type21ASN1_TYPE_UTF8_STRINGE"></span><span class="target" id="group__JSONp__ASN1_1ggae0dad8075dae96c4e46e18dd5d753eecad9fab7a20a7fdeb187457a9a3d3e6e5d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_TYPE_UTF8_STRING</span></span></span><a class="headerlink" href="#_CPPv4N9ASN1_Type21ASN1_TYPE_UTF8_STRINGE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N9ASN1_Type24ASN1_TYPE_VISIBLE_STRINGE">
-<span id="_CPPv3N9ASN1_Type24ASN1_TYPE_VISIBLE_STRINGE"></span><span id="_CPPv2N9ASN1_Type24ASN1_TYPE_VISIBLE_STRINGE"></span><span class="target" id="group__JSONp__ASN1_1ggae0dad8075dae96c4e46e18dd5d753eeca17ac0ac523d1af8cc8937d8c1ba56cd9"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_TYPE_VISIBLE_STRING</span></span></span><a class="headerlink" href="#_CPPv4N9ASN1_Type24ASN1_TYPE_VISIBLE_STRINGE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="cpp enum">
-<dt class="sig sig-object cpp" id="_CPPv48ASN1_Tag">
-<span id="_CPPv38ASN1_Tag"></span><span id="_CPPv28ASN1_Tag"></span><span class="target" id="group__JSONp__ASN1_1gaeca2372e046b77b01f61981971e5398e"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_Tag</span></span></span><a class="headerlink" href="#_CPPv48ASN1_Tag" title="Permalink to this definition"></a><br /></dt>
-<dd><p>ASN1_Tag. Default ASN1 tag values </p>
-<p><em>Values:</em></p>
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N8ASN1_Tag16ASN1_TAG_BOOLEANE">
-<span id="_CPPv3N8ASN1_Tag16ASN1_TAG_BOOLEANE"></span><span id="_CPPv2N8ASN1_Tag16ASN1_TAG_BOOLEANE"></span><span class="target" id="group__JSONp__ASN1_1ggaeca2372e046b77b01f61981971e5398ea538cae4865983b2ba91c559dfac67d9a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_TAG_BOOLEAN</span></span></span><a class="headerlink" href="#_CPPv4N8ASN1_Tag16ASN1_TAG_BOOLEANE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N8ASN1_Tag16ASN1_TAG_INTEGERE">
-<span id="_CPPv3N8ASN1_Tag16ASN1_TAG_INTEGERE"></span><span id="_CPPv2N8ASN1_Tag16ASN1_TAG_INTEGERE"></span><span class="target" id="group__JSONp__ASN1_1ggaeca2372e046b77b01f61981971e5398ea4e575747a31451d9a618e31b1307098e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_TAG_INTEGER</span></span></span><a class="headerlink" href="#_CPPv4N8ASN1_Tag16ASN1_TAG_INTEGERE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N8ASN1_Tag17ASN1_TAG_SEQUENCEE">
-<span id="_CPPv3N8ASN1_Tag17ASN1_TAG_SEQUENCEE"></span><span id="_CPPv2N8ASN1_Tag17ASN1_TAG_SEQUENCEE"></span><span class="target" id="group__JSONp__ASN1_1ggaeca2372e046b77b01f61981971e5398ea727bd030d5402cfe02495d11ae2b4428"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_TAG_SEQUENCE</span></span></span><a class="headerlink" href="#_CPPv4N8ASN1_Tag17ASN1_TAG_SEQUENCEE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N8ASN1_Tag20ASN1_TAG_SEQUENCE_OFE">
-<span id="_CPPv3N8ASN1_Tag20ASN1_TAG_SEQUENCE_OFE"></span><span id="_CPPv2N8ASN1_Tag20ASN1_TAG_SEQUENCE_OFE"></span><span class="target" id="group__JSONp__ASN1_1ggaeca2372e046b77b01f61981971e5398eae8d878373cbc9b6fba9e1c8822196b94"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_TAG_SEQUENCE_OF</span></span></span><a class="headerlink" href="#_CPPv4N8ASN1_Tag20ASN1_TAG_SEQUENCE_OFE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N8ASN1_Tag12ASN1_TAG_SETE">
-<span id="_CPPv3N8ASN1_Tag12ASN1_TAG_SETE"></span><span id="_CPPv2N8ASN1_Tag12ASN1_TAG_SETE"></span><span class="target" id="group__JSONp__ASN1_1ggaeca2372e046b77b01f61981971e5398eaa2dca4e481a570306acaa86609334894"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_TAG_SET</span></span></span><a class="headerlink" href="#_CPPv4N8ASN1_Tag12ASN1_TAG_SETE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N8ASN1_Tag21ASN1_TAG_OCTET_STRINGE">
-<span id="_CPPv3N8ASN1_Tag21ASN1_TAG_OCTET_STRINGE"></span><span id="_CPPv2N8ASN1_Tag21ASN1_TAG_OCTET_STRINGE"></span><span class="target" id="group__JSONp__ASN1_1ggaeca2372e046b77b01f61981971e5398ea5a2d106421a90c9466c4f2cae8b5d4ae"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_TAG_OCTET_STRING</span></span></span><a class="headerlink" href="#_CPPv4N8ASN1_Tag21ASN1_TAG_OCTET_STRINGE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N8ASN1_Tag19ASN1_TAG_BIT_STRINGE">
-<span id="_CPPv3N8ASN1_Tag19ASN1_TAG_BIT_STRINGE"></span><span id="_CPPv2N8ASN1_Tag19ASN1_TAG_BIT_STRINGE"></span><span class="target" id="group__JSONp__ASN1_1ggaeca2372e046b77b01f61981971e5398ead7cba48a7a8a6b396bc17b7926d998c3"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_TAG_BIT_STRING</span></span></span><a class="headerlink" href="#_CPPv4N8ASN1_Tag19ASN1_TAG_BIT_STRINGE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N8ASN1_Tag13ASN1_TAG_NULLE">
-<span id="_CPPv3N8ASN1_Tag13ASN1_TAG_NULLE"></span><span id="_CPPv2N8ASN1_Tag13ASN1_TAG_NULLE"></span><span class="target" id="group__JSONp__ASN1_1ggaeca2372e046b77b01f61981971e5398ea723605653cfbb2958f8b9e90dc29fe21"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_TAG_NULL</span></span></span><a class="headerlink" href="#_CPPv4N8ASN1_Tag13ASN1_TAG_NULLE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N8ASN1_Tag22ASN1_TAG_GENERALSTRINGE">
-<span id="_CPPv3N8ASN1_Tag22ASN1_TAG_GENERALSTRINGE"></span><span id="_CPPv2N8ASN1_Tag22ASN1_TAG_GENERALSTRINGE"></span><span class="target" id="group__JSONp__ASN1_1ggaeca2372e046b77b01f61981971e5398ea88832e13a9262e5d6a9a29f53749ac4e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_TAG_GENERALSTRING</span></span></span><a class="headerlink" href="#_CPPv4N8ASN1_Tag22ASN1_TAG_GENERALSTRINGE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N8ASN1_Tag23ASN1_TAG_NUMERIC_STRINGE">
-<span id="_CPPv3N8ASN1_Tag23ASN1_TAG_NUMERIC_STRINGE"></span><span id="_CPPv2N8ASN1_Tag23ASN1_TAG_NUMERIC_STRINGE"></span><span class="target" id="group__JSONp__ASN1_1ggaeca2372e046b77b01f61981971e5398eacbe0c34d08cbb2004ee4e714daa2a942"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_TAG_NUMERIC_STRING</span></span></span><a class="headerlink" href="#_CPPv4N8ASN1_Tag23ASN1_TAG_NUMERIC_STRINGE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N8ASN1_Tag19ASN1_TAG_IA5_STRINGE">
-<span id="_CPPv3N8ASN1_Tag19ASN1_TAG_IA5_STRINGE"></span><span id="_CPPv2N8ASN1_Tag19ASN1_TAG_IA5_STRINGE"></span><span class="target" id="group__JSONp__ASN1_1ggaeca2372e046b77b01f61981971e5398ea04f6ecd88b55ea2497838fa84601515f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_TAG_IA5_STRING</span></span></span><a class="headerlink" href="#_CPPv4N8ASN1_Tag19ASN1_TAG_IA5_STRINGE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N8ASN1_Tag25ASN1_TAG_PRINTABLE_STRINGE">
-<span id="_CPPv3N8ASN1_Tag25ASN1_TAG_PRINTABLE_STRINGE"></span><span id="_CPPv2N8ASN1_Tag25ASN1_TAG_PRINTABLE_STRINGE"></span><span class="target" id="group__JSONp__ASN1_1ggaeca2372e046b77b01f61981971e5398ea400dd37f5ca75535f49b91b96517053a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_TAG_PRINTABLE_STRING</span></span></span><a class="headerlink" href="#_CPPv4N8ASN1_Tag25ASN1_TAG_PRINTABLE_STRINGE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N8ASN1_Tag20ASN1_TAG_UTF8_STRINGE">
-<span id="_CPPv3N8ASN1_Tag20ASN1_TAG_UTF8_STRINGE"></span><span id="_CPPv2N8ASN1_Tag20ASN1_TAG_UTF8_STRINGE"></span><span class="target" id="group__JSONp__ASN1_1ggaeca2372e046b77b01f61981971e5398eaf4abe4543b5c003523ee1c31784a463e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_TAG_UTF8_STRING</span></span></span><a class="headerlink" href="#_CPPv4N8ASN1_Tag20ASN1_TAG_UTF8_STRINGE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-<dl class="cpp enumerator">
-<dt class="sig sig-object cpp" id="_CPPv4N8ASN1_Tag23ASN1_TAG_VISIBLE_STRINGE">
-<span id="_CPPv3N8ASN1_Tag23ASN1_TAG_VISIBLE_STRINGE"></span><span id="_CPPv2N8ASN1_Tag23ASN1_TAG_VISIBLE_STRINGE"></span><span class="target" id="group__JSONp__ASN1_1ggaeca2372e046b77b01f61981971e5398ea3956c77176aa56751e4148f1c01257f8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_TAG_VISIBLE_STRING</span></span></span><a class="headerlink" href="#_CPPv4N8ASN1_Tag23ASN1_TAG_VISIBLE_STRINGE" title="Permalink to this definition"></a><br /></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-</div>
-<div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv422JSONp_ASN1EncodeRecordPK5cJSONP10apr_hash_tP9JSONpArgsP9Asn1ArrayP9Asn1Array">
-<span id="_CPPv322JSONp_ASN1EncodeRecordPK5cJSONP10apr_hash_tP9JSONpArgsP9Asn1ArrayP9Asn1Array"></span><span id="_CPPv222JSONp_ASN1EncodeRecordPK5cJSONP10apr_hash_tP9JSONpArgsP9Asn1ArrayP9Asn1Array"></span><span id="JSONp_ASN1EncodeRecord__cJSONCP.apr_hash_tP.JSONpArgsP.Asn1ArrayP.Asn1ArrayP"></span><span class="target" id="group__JSONp__ASN1_1gaefe72d494d684eacfbadb46678f1ccd6"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">JSONp_ASN1EncodeRecord</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">cJSON</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">record</span></span>, <span class="n"><span class="pre">apr_hash_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">dict</span></span>, <span class="n"><span class="pre">JSONpArgs</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">jsonp_args</span></span>, <a class="reference internal" href="#_CPPv49Asn1Array" title="Asn1Array"><span class="n"><span class="pre">Asn1Array</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">encValue</span></span>, <a class="reference internal" href="#_CPPv49Asn1Array" title="Asn1Array"><span class="n"><span class="pre">Asn1Array</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">keyEnc</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422JSONp_ASN1EncodeRecordPK5cJSONP10apr_hash_tP9JSONpArgsP9Asn1ArrayP9Asn1Array" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv322JSONp_ASN1EncodeRecordPK5cJSONP10apr_hash_tP9JSONpArgsP9Asn1ArrayP9Asn1Array"></span><span id="_CPPv222JSONp_ASN1EncodeRecordPK5cJSONP10apr_hash_tP9JSONpArgsP9Asn1ArrayP9Asn1Array"></span><span id="JSONp_ASN1EncodeRecord__cJSONCP.apr_hash_tP.JSONpArgsP.Asn1ArrayP.Asn1ArrayP"></span><span class="target" id="group__JSONp__ASN1_1gaefe72d494d684eacfbadb46678f1ccd6"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">JSONp_ASN1EncodeRecord</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">cJSON</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">record</span></span>, <span class="n"><span class="pre">apr_hash_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">dict</span></span>, <span class="n"><span class="pre">JSONpArgs</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">jsonp_args</span></span>, <span class="n"><span class="pre">Asn1Array</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">encValue</span></span>, <span class="n"><span class="pre">Asn1Array</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">keyEnc</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422JSONp_ASN1EncodeRecordPK5cJSONP10apr_hash_tP9JSONpArgsP9Asn1ArrayP9Asn1Array" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Asn1Array_AN1Encode Encodes a JSON record and its dictionarys keys in ASN.1 der binary format</p>
 <p>
 The enconding of the encValue array in ASN.1 DER is as follows<div class="remark admonition">
@@ -507,8 +303,8 @@ The enconding of the encValue array in ASN.1 DER is as follows<div class="remark
 <li><p><strong>record</strong> – JSON object (key value pairs) </p></li>
 <li><p><strong>dict</strong> – Dictionary (hash table) where the entries are the keys and the values are the encrypted keys </p></li>
 <li><p><strong>jsonp_args</strong> – JSONp command-line arguments </p></li>
-<li><p><strong>encValue</strong> – Pointer to an <a class="reference internal" href="#structAsn1Array"><span class="std std-ref">Asn1Array</span></a> containing the resulting <code class="docutils literal notranslate"><span class="pre">numeric</span> <span class="pre">key</span></code> : <code class="docutils literal notranslate"><span class="pre">value</span></code> binary encoding </p></li>
-<li><p><strong>keyEnc</strong> – Pointer to an <a class="reference internal" href="#structAsn1Array"><span class="std std-ref">Asn1Array</span></a> containing the resulting <code class="docutils literal notranslate"><span class="pre">key</span></code> : <code class="docutils literal notranslate"><span class="pre">numeric</span> <span class="pre">key</span></code> binary encoding</p></li>
+<li><p><strong>encValue</strong> – Pointer to an Asn1Array containing the resulting <code class="docutils literal notranslate"><span class="pre">numeric</span> <span class="pre">key</span></code> : <code class="docutils literal notranslate"><span class="pre">value</span></code> binary encoding </p></li>
+<li><p><strong>keyEnc</strong> – Pointer to an Asn1Array containing the resulting <code class="docutils literal notranslate"><span class="pre">key</span></code> : <code class="docutils literal notranslate"><span class="pre">numeric</span> <span class="pre">key</span></code> binary encoding</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -519,8 +315,8 @@ The enconding of the encValue array in ASN.1 DER is as follows<div class="remark
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv414Asn1Array_InitP9Asn1ArrayPhPh">
-<span id="_CPPv314Asn1Array_InitP9Asn1ArrayPhPh"></span><span id="_CPPv214Asn1Array_InitP9Asn1ArrayPhPh"></span><span id="Asn1Array_Init__Asn1ArrayP.unsigned-cP.unsigned-cP"></span><span class="target" id="group__JSONp__ASN1_1gac79fb869d0e585030514149dcb90cd7c"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Asn1Array_Init</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv49Asn1Array" title="Asn1Array"><span class="n"><span class="pre">Asn1Array</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">array</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">suffix</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414Asn1Array_InitP9Asn1ArrayPhPh" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Asn1Array_Init Initializes the struct <a class="reference internal" href="#structAsn1Array"><span class="std std-ref">Asn1Array</span></a></p>
+<span id="_CPPv314Asn1Array_InitP9Asn1ArrayPhPh"></span><span id="_CPPv214Asn1Array_InitP9Asn1ArrayPhPh"></span><span id="Asn1Array_Init__Asn1ArrayP.unsigned-cP.unsigned-cP"></span><span class="target" id="group__JSONp__ASN1_1gac79fb869d0e585030514149dcb90cd7c"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Asn1Array_Init</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Asn1Array</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">array</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">suffix</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414Asn1Array_InitP9Asn1ArrayPhPh" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Asn1Array_Init Initializes the struct Asn1Array</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The string name followed ‘-’ and the tag defines the array’s suffix, </p>
@@ -528,7 +324,7 @@ The enconding of the encValue array in ASN.1 DER is as follows<div class="remark
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>array</strong> – <a class="reference internal" href="#structAsn1Array"><span class="std std-ref">Asn1Array</span></a> array </p></li>
+<li><p><strong>array</strong> – Asn1Array array </p></li>
 <li><p><strong>name</strong> – Optional name to assign to the array (NULL if none) </p></li>
 <li><p><strong>suffix</strong> – Optional tag to assign to the array (NULL if none) </p></li>
 </ul>
@@ -541,11 +337,11 @@ The enconding of the encValue array in ASN.1 DER is as follows<div class="remark
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv415Asn1Array_ClearP9Asn1Array">
-<span id="_CPPv315Asn1Array_ClearP9Asn1Array"></span><span id="_CPPv215Asn1Array_ClearP9Asn1Array"></span><span id="Asn1Array_Clear__Asn1ArrayP"></span><span class="target" id="group__JSONp__ASN1_1gac5e2e3c81b4354d740c5b906809b71fd"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Asn1Array_Clear</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv49Asn1Array" title="Asn1Array"><span class="n"><span class="pre">Asn1Array</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">array</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415Asn1Array_ClearP9Asn1Array" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Asn1Array_Clear Clear the struct <a class="reference internal" href="#structAsn1Array"><span class="std std-ref">Asn1Array</span></a></p>
+<span id="_CPPv315Asn1Array_ClearP9Asn1Array"></span><span id="_CPPv215Asn1Array_ClearP9Asn1Array"></span><span id="Asn1Array_Clear__Asn1ArrayP"></span><span class="target" id="group__JSONp__ASN1_1gac5e2e3c81b4354d740c5b906809b71fd"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Asn1Array_Clear</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Asn1Array</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">array</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415Asn1Array_ClearP9Asn1Array" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Asn1Array_Clear Clear the struct Asn1Array</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>array</strong> – <a class="reference internal" href="#structAsn1Array"><span class="std std-ref">Asn1Array</span></a> array </p>
+<dd class="field-odd"><p><strong>array</strong> – Asn1Array array </p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>int cleanup results </p>
@@ -555,12 +351,12 @@ The enconding of the encValue array in ASN.1 DER is as follows<div class="remark
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv415Asn1Array_PrintP9Asn1ArrayPc">
-<span id="_CPPv315Asn1Array_PrintP9Asn1ArrayPc"></span><span id="_CPPv215Asn1Array_PrintP9Asn1ArrayPc"></span><span id="Asn1Array_Print__Asn1ArrayP.cP"></span><span class="target" id="group__JSONp__ASN1_1ga76df7cab3dd6313eef245d5f4f199a01"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Asn1Array_Print</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv49Asn1Array" title="Asn1Array"><span class="n"><span class="pre">Asn1Array</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">array</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">message</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415Asn1Array_PrintP9Asn1ArrayPc" title="Permalink to this definition"></a><br /></dt>
+<span id="_CPPv315Asn1Array_PrintP9Asn1ArrayPc"></span><span id="_CPPv215Asn1Array_PrintP9Asn1ArrayPc"></span><span id="Asn1Array_Print__Asn1ArrayP.cP"></span><span class="target" id="group__JSONp__ASN1_1ga76df7cab3dd6313eef245d5f4f199a01"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Asn1Array_Print</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Asn1Array</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">array</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">message</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415Asn1Array_PrintP9Asn1ArrayPc" title="Permalink to this definition"></a><br /></dt>
 <dd><p>Asn1Array_Print Print the array’s internal bytes</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>array</strong> – <a class="reference internal" href="#structAsn1Array"><span class="std std-ref">Asn1Array</span></a> array </p></li>
+<li><p><strong>array</strong> – Asn1Array array </p></li>
 <li><p><strong>message</strong> – Additional header message </p></li>
 </ul>
 </dd>
@@ -572,12 +368,12 @@ The enconding of the encValue array in ASN.1 DER is as follows<div class="remark
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv416Asn1Array_InsertP9Asn1Array9ASN1_TypePv">
-<span id="_CPPv316Asn1Array_InsertP9Asn1Array9ASN1_TypePv"></span><span id="_CPPv216Asn1Array_InsertP9Asn1Array9ASN1_TypePv"></span><span id="Asn1Array_Insert__Asn1ArrayP.ASN1_Type.voidP"></span><span class="target" id="group__JSONp__ASN1_1gab88c0203dd1bb01a407b794f509e6f36"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Asn1Array_Insert</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv49Asn1Array" title="Asn1Array"><span class="n"><span class="pre">Asn1Array</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">array</span></span>, <span class="k"><span class="pre">enum</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv49ASN1_Type" title="ASN1_Type"><span class="n"><span class="pre">ASN1_Type</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416Asn1Array_InsertP9Asn1Array9ASN1_TypePv" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Asn1Array_Insert Insert a simple ASN.1 element into an <a class="reference internal" href="#structAsn1Array"><span class="std std-ref">Asn1Array</span></a></p>
+<span id="_CPPv316Asn1Array_InsertP9Asn1Array9ASN1_TypePv"></span><span id="_CPPv216Asn1Array_InsertP9Asn1Array9ASN1_TypePv"></span><span id="Asn1Array_Insert__Asn1ArrayP.ASN1_Type.voidP"></span><span class="target" id="group__JSONp__ASN1_1gab88c0203dd1bb01a407b794f509e6f36"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Asn1Array_Insert</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Asn1Array</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">array</span></span>, <span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="n"><span class="pre">ASN1_Type</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416Asn1Array_InsertP9Asn1Array9ASN1_TypePv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Asn1Array_Insert Insert a simple ASN.1 element into an Asn1Array</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>array</strong> – <a class="reference internal" href="#structAsn1Array"><span class="std std-ref">Asn1Array</span></a> array </p></li>
+<li><p><strong>array</strong> – Asn1Array array </p></li>
 <li><p><strong>type</strong> – element’s type </p></li>
 <li><p><strong>value</strong> – element’s value </p></li>
 </ul>
@@ -590,8 +386,8 @@ The enconding of the encValue array in ASN.1 DER is as follows<div class="remark
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv420Asn1Array_AppendPairP9Asn1Array9ASN1_TypePv9ASN1_TypePv">
-<span id="_CPPv320Asn1Array_AppendPairP9Asn1Array9ASN1_TypePv9ASN1_TypePv"></span><span id="_CPPv220Asn1Array_AppendPairP9Asn1Array9ASN1_TypePv9ASN1_TypePv"></span><span id="Asn1Array_AppendPair__Asn1ArrayP.ASN1_Type.voidP.ASN1_Type.voidP"></span><span class="target" id="group__JSONp__ASN1_1gaec4e8c044f4f15d12eeac9757ca2d572"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Asn1Array_AppendPair</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv49Asn1Array" title="Asn1Array"><span class="n"><span class="pre">Asn1Array</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">array</span></span>, <span class="k"><span class="pre">enum</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv49ASN1_Type" title="ASN1_Type"><span class="n"><span class="pre">ASN1_Type</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">first_type</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">first_value</span></span>, <span class="k"><span class="pre">enum</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv49ASN1_Type" title="ASN1_Type"><span class="n"><span class="pre">ASN1_Type</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">second_type</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">second_value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420Asn1Array_AppendPairP9Asn1Array9ASN1_TypePv9ASN1_TypePv" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Asn1Array_AppendPair Appends a pair of ASN.1 elements into an existing <a class="reference internal" href="#structAsn1Array"><span class="std std-ref">Asn1Array</span></a></p>
+<span id="_CPPv320Asn1Array_AppendPairP9Asn1Array9ASN1_TypePv9ASN1_TypePv"></span><span id="_CPPv220Asn1Array_AppendPairP9Asn1Array9ASN1_TypePv9ASN1_TypePv"></span><span id="Asn1Array_AppendPair__Asn1ArrayP.ASN1_Type.voidP.ASN1_Type.voidP"></span><span class="target" id="group__JSONp__ASN1_1gaec4e8c044f4f15d12eeac9757ca2d572"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Asn1Array_AppendPair</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Asn1Array</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">array</span></span>, <span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="n"><span class="pre">ASN1_Type</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">first_type</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">first_value</span></span>, <span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="n"><span class="pre">ASN1_Type</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">second_type</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">second_value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420Asn1Array_AppendPairP9Asn1Array9ASN1_TypePv9ASN1_TypePv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Asn1Array_AppendPair Appends a pair of ASN.1 elements into an existing Asn1Array</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>A pair is modeled as an <code class="docutils literal notranslate"><span class="pre">SEQUENCE</span></code> ASN1 tag with two elements. </p>
@@ -599,7 +395,7 @@ The enconding of the encValue array in ASN.1 DER is as follows<div class="remark
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>array</strong> – <a class="reference internal" href="#structAsn1Array"><span class="std std-ref">Asn1Array</span></a> array to append </p></li>
+<li><p><strong>array</strong> – Asn1Array array to append </p></li>
 <li><p><strong>first_type</strong> – First element’s type </p></li>
 <li><p><strong>first_value</strong> – First element’s value </p></li>
 <li><p><strong>second_type</strong> – Second element’s type </p></li>
@@ -628,12 +424,12 @@ The enconding of the encValue array in ASN.1 DER is as follows<div class="remark
 
 <dl class="cpp function">
 <dt class="sig sig-object cpp" id="_CPPv421Asn1Array_WriteToFileP9Asn1ArrayP9JSONpArgs">
-<span id="_CPPv321Asn1Array_WriteToFileP9Asn1ArrayP9JSONpArgs"></span><span id="_CPPv221Asn1Array_WriteToFileP9Asn1ArrayP9JSONpArgs"></span><span id="Asn1Array_WriteToFile__Asn1ArrayP.JSONpArgsP"></span><span class="target" id="group__JSONp__ASN1_1gab2bf76911fc8046e4846627a8d88057a"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Asn1Array_WriteToFile</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv49Asn1Array" title="Asn1Array"><span class="n"><span class="pre">Asn1Array</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">array</span></span>, <span class="n"><span class="pre">JSONpArgs</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">jsonp_args</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421Asn1Array_WriteToFileP9Asn1ArrayP9JSONpArgs" title="Permalink to this definition"></a><br /></dt>
-<dd><p>Write an binary <a class="reference internal" href="#structAsn1Array"><span class="std std-ref">Asn1Array</span></a> to a file</p>
+<span id="_CPPv321Asn1Array_WriteToFileP9Asn1ArrayP9JSONpArgs"></span><span id="_CPPv221Asn1Array_WriteToFileP9Asn1ArrayP9JSONpArgs"></span><span id="Asn1Array_WriteToFile__Asn1ArrayP.JSONpArgsP"></span><span class="target" id="group__JSONp__ASN1_1gab2bf76911fc8046e4846627a8d88057a"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Asn1Array_WriteToFile</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Asn1Array</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">array</span></span>, <span class="n"><span class="pre">JSONpArgs</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">jsonp_args</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421Asn1Array_WriteToFileP9Asn1ArrayP9JSONpArgs" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Write an binary Asn1Array to a file</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>array</strong> – <a class="reference internal" href="#structAsn1Array"><span class="std std-ref">Asn1Array</span></a> </p></li>
+<li><p><strong>array</strong> – Asn1Array </p></li>
 <li><p><strong>jsonp_args</strong> – JSONp command-line arguments </p></li>
 </ul>
 </dd>
@@ -644,15 +440,6 @@ The enconding of the encValue array in ASN.1 DER is as follows<div class="remark
 </dd></dl>
 
 </div>
-<dl class="cpp struct">
-<dt class="sig sig-object cpp" id="_CPPv49Asn1Array">
-<span id="_CPPv39Asn1Array"></span><span id="_CPPv29Asn1Array"></span><span id="Asn1Array"></span><span class="target" id="structAsn1Array"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Asn1Array</span></span></span><a class="headerlink" href="#_CPPv49Asn1Array" title="Permalink to this definition"></a><br /></dt>
-<dd><div class="docutils container">
-<em>#include &lt;asn1.h&gt;</em></div>
-<p>An array structure to represent the <code class="docutils literal notranslate"><span class="pre">SEQUENCE</span> <span class="pre">OF</span></code> ASN1 tag. </p>
-<p><a class="reference internal" href="#structAsn1Array"><span class="std std-ref">Asn1Array</span></a> stores the contents of a <code class="docutils literal notranslate"><span class="pre">SEQUENCE</span> <span class="pre">OF</span></code> tag as a char array. The buffer size and the next available position are also stored. </p>
-</dd></dl>
-
 </dd></dl>
 
 </section>
@@ -668,7 +455,7 @@ The enconding of the encValue array in ASN.1 DER is as follows<div class="remark
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, eduardo.</p>
+    <p>&#169; Copyright 2022, Eduardo Werley.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
