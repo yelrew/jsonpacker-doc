@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to jsonpacker’s documentation! &mdash; jsonpacker 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="JSONp reference" href="api.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="#" class="icon icon-home"> jsonpacker
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api.html">JSONp reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">jsonpacker</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
+      <li>Welcome to jsonpacker’s documentation!</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="welcome-to-jsonpacker-s-documentation">
+<h1>Welcome to jsonpacker’s documentation!<a class="headerlink" href="#welcome-to-jsonpacker-s-documentation" title="Permalink to this headline"></a></h1>
+<section id="json-packer">
+<h2>JSON Packer<a class="headerlink" href="#json-packer" title="Permalink to this headline"></a></h2>
+<p><strong>A JSON binary packer</strong>.</p>
+<section id="synopsis">
+<h3>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline"></a></h3>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Usage: jsonpackerc [OPTION...] &lt;JSON file&gt;
+JSON Packer -- A program to encode JSON key-valued objects in binary format.
+
+  -d, --one-dict             Use a single dicionary for all records (optional)
+  -e, --encoder=encoder      Changes default file output name (optional)
+  -n, --no-file-output       Do not write binary files
+  -o, --output=outfile       Changes default file output name (optional)
+
+ Output formatting
+  -b, --print-encondings     Prints the encondings&#39; byte arrays
+  -r, --print-records        Prints records in a compact JSON style
+  -R, --print-full-records   Prints records in a full JSON style
+
+  -?, --help                 Give this help list
+      --usage                Give a short usage message
+  -V, --version              Print program version
+</pre></div>
+</div>
+<p><em>JSON packer</em> is a small utility that reads sequences of JSON records and encode them in  binary format.
+<em>JSON packer</em> makes uses of <a class="reference external" href="https://github.com/DaveGamble/cJSON">cJSON</a> to parse the objects.</p>
+<p>Each JSON key-value record is split into two new pairs: an <code class="docutils literal notranslate"><span class="pre">encValue</span></code> pair,
+whith the keys replaced by “numeric” pre-assigned values; and a <code class="docutils literal notranslate"><span class="pre">keyEnc</span></code>
+pair, with a mapping between the original keys and the new encoded keys.
+The encoded values and keys can be optionally written to a file stream.</p>
+<p>By default, <em>JSON packer</em> adopts the
+<a class="reference external" href="https://www.itu.int/en/ITU-T/asn1/Pages/introduction.aspx">ASN.1</a> <em>DER</em> format to encode the records.
+New encoder types are expected to be released soon.</p>
+</section>
+<section id="basic-usage">
+<h3>Basic usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline"></a></h3>
+<p>In the general use case, <em>JSON packer</em> reads a <em>JSON</em> file containing a series of records
+(separated by newlines) and generates two binary files in ASN.1 DER encoding:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>    ./jsonp &lt;json-records-file&gt; -b
+</pre></div>
+</div>
+<p>The files are named after the original input file, and written in the same folder.</p>
+</section>
+<section id="building">
+<h3>Building<a class="headerlink" href="#building" title="Permalink to this headline"></a></h3>
+<p>The program’s can be compiled using <em>CMake</em>:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>mkdir build
+cd build
+cmake ..
+cmake --build .
+</pre></div>
+</div>
+</section>
+<section id="documentation">
+<h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline"></a></h3>
+<p>The Doxygen documentation can be optionally generated by:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cmake --build . --target doc
+</pre></div>
+</div>
+</section>
+<section id="tests">
+<h3>Tests<a class="headerlink" href="#tests" title="Permalink to this headline"></a></h3>
+<p>Unity tests are compiled by:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>cmake --build . --target test
+</pre></div>
+</div>
+</section>
+</section>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api.html">JSONp reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#jsonp-main-functions">JSONp main functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#jsonp-asn-1-interface">JSONp ASN.1 interface</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline"></a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="api.html" class="btn btn-neutral float-right" title="JSONp reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, eduardo.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
