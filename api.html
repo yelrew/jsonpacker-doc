@@ -75,17 +75,373 @@
 </div>
 <section id="jsonp-main-functions">
 <h2>JSONp main functions<a class="headerlink" href="#jsonp-main-functions" title="Permalink to this headline"></a></h2>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>doxygengroup: Cannot find file: /home/werley/projects/jsonpacker/build/doc/doxygen/xml/index.xml</p>
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="group__JSONp"></span><em><span class="pre">group</span></em> <span class="sig-name descname"><span class="pre">JSONp</span></span></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-enums">Enums</p>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv412JSONpEncoder">
+<span id="_CPPv312JSONpEncoder"></span><span id="_CPPv212JSONpEncoder"></span><span class="target" id="group__JSONp_1ga115d6ba7d4e6550720dc8f2322cdeab6"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">JSONpEncoder</span></span></span><a class="headerlink" href="#_CPPv412JSONpEncoder" title="Permalink to this definition"></a><br /></dt>
+<dd><p>JSONpEncoder. Encoder types handled by JSONp </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12JSONpEncoder6JpASN1E">
+<span id="_CPPv3N12JSONpEncoder6JpASN1E"></span><span id="_CPPv2N12JSONpEncoder6JpASN1E"></span><span class="target" id="group__JSONp_1gga115d6ba7d4e6550720dc8f2322cdeab6a079dbaef8d747c35ac6ba0934b1c6e6a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">JpASN1</span></span></span><a class="headerlink" href="#_CPPv4N12JSONpEncoder6JpASN1E" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Default internal ASN1 encoder </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12JSONpEncoder7GnuASN1E">
+<span id="_CPPv3N12JSONpEncoder7GnuASN1E"></span><span id="_CPPv2N12JSONpEncoder7GnuASN1E"></span><span class="target" id="group__JSONp_1gga115d6ba7d4e6550720dc8f2322cdeab6af6fa4b1dc9aa94caa0087ce976298734"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">GnuASN1</span></span></span><a class="headerlink" href="#_CPPv4N12JSONpEncoder7GnuASN1E" title="Permalink to this definition"></a><br /></dt>
+<dd><p>GNU Libtasn </p>
+</dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12JSONpEncoder7libBSONE">
+<span id="_CPPv3N12JSONpEncoder7libBSONE"></span><span id="_CPPv2N12JSONpEncoder7libBSONE"></span><span class="target" id="group__JSONp_1gga115d6ba7d4e6550720dc8f2322cdeab6ab0c71f3940341953f537737cdb6c2e64"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">libBSON</span></span></span><a class="headerlink" href="#_CPPv4N12JSONpEncoder7libBSONE" title="Permalink to this definition"></a><br /></dt>
+<dd><p>LibBSON </p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv410JSONp_PackP9JSONpArgs">
+<span id="_CPPv310JSONp_PackP9JSONpArgs"></span><span id="_CPPv210JSONp_PackP9JSONpArgs"></span><span id="JSONp_Pack__JSONpArgsP"></span><span class="target" id="group__JSONp_1ga10ae8e5734412e9562dd198176bbbf7b"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">JSONp_Pack</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">JSONpArgs</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">jsonp_args</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv410JSONp_PackP9JSONpArgs" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Reads a text file and extracts JSON records for packing. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>jsonp_args</strong> – Pointer to the command-line arguments </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>int Exit code </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv419JSONp_ProcessRecordP5cJSONP10apr_hash_tP9JSONpArgsP10apr_pool_t">
+<span id="_CPPv319JSONp_ProcessRecordP5cJSONP10apr_hash_tP9JSONpArgsP10apr_pool_t"></span><span id="_CPPv219JSONp_ProcessRecordP5cJSONP10apr_hash_tP9JSONpArgsP10apr_pool_t"></span><span id="JSONp_ProcessRecord__cJSONP.apr_hash_tP.JSONpArgsP.apr_pool_tP"></span><span class="target" id="group__JSONp_1ga4657f0d569105e445696ee6d4d79d623"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">JSONp_ProcessRecord</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">cJSON</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">record</span></span>, <span class="n"><span class="pre">apr_hash_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">dict</span></span>, <span class="n"><span class="pre">JSONpArgs</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">jsonp_args</span></span>, <span class="n"><span class="pre">apr_pool_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">mp</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419JSONp_ProcessRecordP5cJSONP10apr_hash_tP9JSONpArgsP10apr_pool_t" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Process a JSON record and assigns a numeric key. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>record</strong> – cJSON object containing a record </p></li>
+<li><p><strong>dict</strong> – ARP dictionary to store key-value (string-int) pairs </p></li>
+<li><p><strong>jsonp_args</strong> – Pointer to the command-line arguments </p></li>
+<li><p><strong>mp</strong> – Pointer to an Apache Runtime memory pool </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>int Exit code </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv418JSONp_EncodeRecordP10apr_hash_tP5cJSONP9JSONpArgsP9Asn1ArrayP9Asn1Array">
+<span id="_CPPv318JSONp_EncodeRecordP10apr_hash_tP5cJSONP9JSONpArgsP9Asn1ArrayP9Asn1Array"></span><span id="_CPPv218JSONp_EncodeRecordP10apr_hash_tP5cJSONP9JSONpArgsP9Asn1ArrayP9Asn1Array"></span><span id="JSONp_EncodeRecord__apr_hash_tP.cJSONP.JSONpArgsP.Asn1ArrayP.Asn1ArrayP"></span><span class="target" id="group__JSONp_1ga417544420ae66c5ee9b25d35714a5f57"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">JSONp_EncodeRecord</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">apr_hash_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">dict</span></span>, <span class="n"><span class="pre">cJSON</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">record</span></span>, <span class="n"><span class="pre">JSONpArgs</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">jsonp_args</span></span>, <span class="n"><span class="pre">Asn1Array</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">encValue</span></span>, <span class="n"><span class="pre">Asn1Array</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">keyEnc</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418JSONp_EncodeRecordP10apr_hash_tP5cJSONP9JSONpArgsP9Asn1ArrayP9Asn1Array" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Encodes a JSON record and the corresponding numeric keys in binary format. </p>
+<p>For a given JSON record, splits each key-value pair into an <code class="docutils literal notranslate"><span class="pre">encValue</span></code> pair, where the keys are replaced by <code class="docutils literal notranslate"><span class="pre">numeric</span></code> pre-assigned values, and a <code class="docutils literal notranslate"><span class="pre">keyEnc</span></code> pair, with a mapping between the original keys and the new encoded keys.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dict</strong> – Dictionary (hash table) where the entries are the keys and the values are the encrypted keys </p></li>
+<li><p><strong>record</strong> – JSON object (key value pairs) </p></li>
+<li><p><strong>jsonp_args</strong> – JSONp command-line arguments</p></li>
+<li><p><strong>encValue</strong> – Pointer to an Asn1Array containing the resulting <code class="docutils literal notranslate"><span class="pre">numeric</span> <span class="pre">key</span></code> : <code class="docutils literal notranslate"><span class="pre">value</span></code> binary encoding </p></li>
+<li><p><strong>keyEnc</strong> – Pointer to an Asn1Array containing the resulting <code class="docutils literal notranslate"><span class="pre">key</span></code> : <code class="docutils literal notranslate"><span class="pre">numeric</span> <span class="pre">key</span></code> binary encoding</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>int return status </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv419JSONp_PrintEncodingP10apr_hash_tPK5cJSONP9JSONpArgs">
+<span id="_CPPv319JSONp_PrintEncodingP10apr_hash_tPK5cJSONP9JSONpArgs"></span><span id="_CPPv219JSONp_PrintEncodingP10apr_hash_tPK5cJSONP9JSONpArgs"></span><span id="JSONp_PrintEncoding__apr_hash_tP.cJSONCP.JSONpArgsP"></span><span class="target" id="group__JSONp_1gac0799f6cd0a8f397852b6fbe1fe67429"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">JSONp_PrintEncoding</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">apr_hash_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">dict</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">cJSON</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">record</span></span>, <span class="n"><span class="pre">JSONpArgs</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">jsonp_args</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419JSONp_PrintEncodingP10apr_hash_tPK5cJSONP9JSONpArgs" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Prints the record encoding (encoded record and dictionary) </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>record</strong> – The cJSON object containing a record </p></li>
+<li><p><strong>dict</strong> – The ARP dictionary with key-value (string-int) pairs </p></li>
+<li><p><strong>jsonp_args</strong> – Pointer to the program’s options structure </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>int exit code </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv415JSONp_PrintDictP10apr_hash_t">
+<span id="_CPPv315JSONp_PrintDictP10apr_hash_t"></span><span id="_CPPv215JSONp_PrintDictP10apr_hash_t"></span><span id="JSONp_PrintDict__apr_hash_tP"></span><span class="target" id="group__JSONp_1gaed512122f05f09d2c82b5d2cd9d3d4f7"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">JSONp_PrintDict</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">apr_hash_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">dict</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415JSONp_PrintDictP10apr_hash_t" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Prints the full dict. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>dict</strong> – The ARP dictionary with the key-value (string-long) pairs </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>int exit code </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv416JSONp_UpdateDictP10apr_hash_tPK5cJSONP9JSONpArgsP10apr_pool_t">
+<span id="_CPPv316JSONp_UpdateDictP10apr_hash_tPK5cJSONP9JSONpArgsP10apr_pool_t"></span><span id="_CPPv216JSONp_UpdateDictP10apr_hash_tPK5cJSONP9JSONpArgsP10apr_pool_t"></span><span id="JSONp_UpdateDict__apr_hash_tP.cJSONCP.JSONpArgsP.apr_pool_tP"></span><span class="target" id="group__JSONp_1gac761ee9b70a17f9f24178fd7f3d7b694"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">JSONp_UpdateDict</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">apr_hash_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">dict</span></span>, <span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">cJSON</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">record</span></span>, <span class="n"><span class="pre">JSONpArgs</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">jsonp_args</span></span>, <span class="n"><span class="pre">apr_pool_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">mp</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416JSONp_UpdateDictP10apr_hash_tPK5cJSONP9JSONpArgsP10apr_pool_t" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Add the keys of a JSON record to a hash-table. </p>
+<p><div class="remark admonition">
+<p class="admonition-title">Remark</p>
+<p>Existing keys are not overwritten. </p>
+</div>
+</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dict</strong> – ARP dictionary to store key-value (string-int) pairs </p></li>
+<li><p><strong>record</strong> – cJSON object containing a record </p></li>
+<li><p><strong>jsonp_args</strong> – Pointer to the command-line arguments </p></li>
+<li><p><strong>mp</strong> – Pointer to an Apache Runtime memory pool </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>int Exit code </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv417JSONp_cJSON_printPK5cJSONP9JSONpArgs">
+<span id="_CPPv317JSONp_cJSON_printPK5cJSONP9JSONpArgs"></span><span id="_CPPv217JSONp_cJSON_printPK5cJSONP9JSONpArgs"></span><span id="JSONp_cJSON_print__cJSONCP.JSONpArgsP"></span><span class="target" id="group__JSONp_1ga6ff4e1708e7bd11f25d8f62901de5668"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">JSONp_cJSON_print</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">cJSON</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">record</span></span>, <span class="n"><span class="pre">JSONpArgs</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">jsonp_args</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417JSONp_cJSON_printPK5cJSONP9JSONpArgs" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Prints the JSON object which holds a single record. </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>record</strong> – cJSON object containing the record </p></li>
+<li><p><strong>jsonp_args</strong> – Pointer to the program’s options structure </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>int exit code </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
 </section>
 <section id="jsonp-asn-1-interface">
 <h2>JSONp ASN.1 interface<a class="headerlink" href="#jsonp-asn-1-interface" title="Permalink to this headline"></a></h2>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>doxygengroup: Cannot find file: /home/werley/projects/jsonpacker/build/doc/doxygen/xml/index.xml</p>
+<dl>
+<dt class="sig sig-object cpp">
+<span class="target" id="group__JSONp__ASN1"></span><em><span class="pre">group</span></em> <span class="sig-name descname"><span class="pre">JSONp_ASN1</span></span></dt>
+<dd><p>Definitions related to ASN.1 encoder </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-defines">Defines</p>
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.JSONP_ASN1_SUCCESS">
+<span class="target" id="group__JSONp__ASN1_1gac9ed2ba07fa369e2c9cb826c5113bb7a"></span><span class="sig-name descname"><span class="n"><span class="pre">JSONP_ASN1_SUCCESS</span></span></span><a class="headerlink" href="#c.JSONP_ASN1_SUCCESS" title="Permalink to this definition"></a><br /></dt>
+<dd><p>ASN1 Encoding sucess </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.JSONP_ASN1_MEM_ERROR">
+<span class="target" id="group__JSONp__ASN1_1gad235c8a0a784c122204dd7ce4bd3937b"></span><span class="sig-name descname"><span class="n"><span class="pre">JSONP_ASN1_MEM_ERROR</span></span></span><a class="headerlink" href="#c.JSONP_ASN1_MEM_ERROR" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.JSONP_ASN1_FILE_WRITE_ERROR">
+<span class="target" id="group__JSONp__ASN1_1ga630733b5c4ae1ddf202224c5aac0b910"></span><span class="sig-name descname"><span class="n"><span class="pre">JSONP_ASN1_FILE_WRITE_ERROR</span></span></span><a class="headerlink" href="#c.JSONP_ASN1_FILE_WRITE_ERROR" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt class="sig sig-object cpp" id="c.ASN1_ARRAY_BLOCK_SIZE">
+<span class="target" id="group__JSONp__ASN1_1gae601d7f0422a53943e307629e9a6ebb2"></span><span class="sig-name descname"><span class="n"><span class="pre">ASN1_ARRAY_BLOCK_SIZE</span></span></span><a class="headerlink" href="#c.ASN1_ARRAY_BLOCK_SIZE" title="Permalink to this definition"></a><br /></dt>
+<dd></dd></dl>
+
 </div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv422JSONp_ASN1EncodeRecordPK5cJSONP10apr_hash_tP9JSONpArgsP9Asn1ArrayP9Asn1Array">
+<span id="_CPPv322JSONp_ASN1EncodeRecordPK5cJSONP10apr_hash_tP9JSONpArgsP9Asn1ArrayP9Asn1Array"></span><span id="_CPPv222JSONp_ASN1EncodeRecordPK5cJSONP10apr_hash_tP9JSONpArgsP9Asn1ArrayP9Asn1Array"></span><span id="JSONp_ASN1EncodeRecord__cJSONCP.apr_hash_tP.JSONpArgsP.Asn1ArrayP.Asn1ArrayP"></span><span class="target" id="group__JSONp__ASN1_1gaefe72d494d684eacfbadb46678f1ccd6"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">JSONp_ASN1EncodeRecord</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="n"><span class="pre">cJSON</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">record</span></span>, <span class="n"><span class="pre">apr_hash_t</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">dict</span></span>, <span class="n"><span class="pre">JSONpArgs</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">jsonp_args</span></span>, <span class="n"><span class="pre">Asn1Array</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">encValue</span></span>, <span class="n"><span class="pre">Asn1Array</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">keyEnc</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422JSONp_ASN1EncodeRecordPK5cJSONP10apr_hash_tP9JSONpArgsP9Asn1ArrayP9Asn1Array" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Asn1Array_AN1Encode Encodes a JSON record and its dictionarys keys in ASN.1 der binary format</p>
+<p>
+The enconding of the encValue array in ASN.1 DER is as follows<div class="remark admonition">
+<p class="admonition-title">Remark</p>
+<p>When enconding the dictionary, only the elements present in the dictionary are encoded, as the dicionary may contain elements of another records.</p>
+</div>
+</p>
+<p>DEFINITIONS ::= BEGIN <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">EncValue</span> <span class="p">:</span><span class="o">:=</span> <span class="n">SEQUENCE</span> <span class="n">OF</span> <span class="n">SEQUENCE</span> <span class="p">{</span>
+    <span class="n">enc</span> <span class="n">INTEGER</span><span class="p">,</span>
+    <span class="n">value</span> <span class="n">CHOICE</span> <span class="p">{</span>
+        <span class="nb">int</span> <span class="n">INTEGER</span><span class="p">,</span>
+        <span class="nb">str</span> <span class="n">UTF8String</span><span class="p">,</span>
+        <span class="nb">bool</span> <span class="n">BOOLEAN</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">KeyEnc</span> <span class="p">:</span><span class="o">:=</span> <span class="n">SEQUENCE</span> <span class="n">OF</span> <span class="n">SEQUENCE</span> <span class="p">{</span>
+    <span class="n">key</span> <span class="n">UTF8String</span><span class="p">,</span>
+    <span class="n">enc</span> <span class="n">INTEGER</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+ </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>record</strong> – JSON object (key value pairs) </p></li>
+<li><p><strong>dict</strong> – Dictionary (hash table) where the entries are the keys and the values are the encrypted keys </p></li>
+<li><p><strong>jsonp_args</strong> – JSONp command-line arguments </p></li>
+<li><p><strong>encValue</strong> – Pointer to an Asn1Array containing the resulting <code class="docutils literal notranslate"><span class="pre">numeric</span> <span class="pre">key</span></code> : <code class="docutils literal notranslate"><span class="pre">value</span></code> binary encoding </p></li>
+<li><p><strong>keyEnc</strong> – Pointer to an Asn1Array containing the resulting <code class="docutils literal notranslate"><span class="pre">key</span></code> : <code class="docutils literal notranslate"><span class="pre">numeric</span> <span class="pre">key</span></code> binary encoding</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>int return status </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv414Asn1Array_InitP9Asn1ArrayPhPh">
+<span id="_CPPv314Asn1Array_InitP9Asn1ArrayPhPh"></span><span id="_CPPv214Asn1Array_InitP9Asn1ArrayPhPh"></span><span id="Asn1Array_Init__Asn1ArrayP.unsigned-cP.unsigned-cP"></span><span class="target" id="group__JSONp__ASN1_1gac79fb869d0e585030514149dcb90cd7c"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Asn1Array_Init</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Asn1Array</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">array</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">name</span></span>, <span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">suffix</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414Asn1Array_InitP9Asn1ArrayPhPh" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Asn1Array_Init Initializes the struct Asn1Array</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The string name followed ‘-’ and the tag defines the array’s suffix, </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>array</strong> – Asn1Array array </p></li>
+<li><p><strong>name</strong> – Optional name to assign to the array (NULL if none) </p></li>
+<li><p><strong>suffix</strong> – Optional tag to assign to the array (NULL if none) </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>status Initialization results</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv415Asn1Array_ClearP9Asn1Array">
+<span id="_CPPv315Asn1Array_ClearP9Asn1Array"></span><span id="_CPPv215Asn1Array_ClearP9Asn1Array"></span><span id="Asn1Array_Clear__Asn1ArrayP"></span><span class="target" id="group__JSONp__ASN1_1gac5e2e3c81b4354d740c5b906809b71fd"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Asn1Array_Clear</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Asn1Array</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">array</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415Asn1Array_ClearP9Asn1Array" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Asn1Array_Clear Clear the struct Asn1Array</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>array</strong> – Asn1Array array </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>int cleanup results </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv415Asn1Array_PrintP9Asn1ArrayPc">
+<span id="_CPPv315Asn1Array_PrintP9Asn1ArrayPc"></span><span id="_CPPv215Asn1Array_PrintP9Asn1ArrayPc"></span><span id="Asn1Array_Print__Asn1ArrayP.cP"></span><span class="target" id="group__JSONp__ASN1_1ga76df7cab3dd6313eef245d5f4f199a01"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Asn1Array_Print</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Asn1Array</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">array</span></span>, <span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">message</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415Asn1Array_PrintP9Asn1ArrayPc" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Asn1Array_Print Print the array’s internal bytes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>array</strong> – Asn1Array array </p></li>
+<li><p><strong>message</strong> – Additional header message </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>int status </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv416Asn1Array_InsertP9Asn1Array9ASN1_TypePv">
+<span id="_CPPv316Asn1Array_InsertP9Asn1Array9ASN1_TypePv"></span><span id="_CPPv216Asn1Array_InsertP9Asn1Array9ASN1_TypePv"></span><span id="Asn1Array_Insert__Asn1ArrayP.ASN1_Type.voidP"></span><span class="target" id="group__JSONp__ASN1_1gab88c0203dd1bb01a407b794f509e6f36"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Asn1Array_Insert</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Asn1Array</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">array</span></span>, <span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="n"><span class="pre">ASN1_Type</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">type</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416Asn1Array_InsertP9Asn1Array9ASN1_TypePv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Asn1Array_Insert Insert a simple ASN.1 element into an Asn1Array</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>array</strong> – Asn1Array array </p></li>
+<li><p><strong>type</strong> – element’s type </p></li>
+<li><p><strong>value</strong> – element’s value </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>int return status </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv420Asn1Array_AppendPairP9Asn1Array9ASN1_TypePv9ASN1_TypePv">
+<span id="_CPPv320Asn1Array_AppendPairP9Asn1Array9ASN1_TypePv9ASN1_TypePv"></span><span id="_CPPv220Asn1Array_AppendPairP9Asn1Array9ASN1_TypePv9ASN1_TypePv"></span><span id="Asn1Array_AppendPair__Asn1ArrayP.ASN1_Type.voidP.ASN1_Type.voidP"></span><span class="target" id="group__JSONp__ASN1_1gaec4e8c044f4f15d12eeac9757ca2d572"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Asn1Array_AppendPair</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Asn1Array</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">array</span></span>, <span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="n"><span class="pre">ASN1_Type</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">first_type</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">first_value</span></span>, <span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="n"><span class="pre">ASN1_Type</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">second_type</span></span>, <span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">second_value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420Asn1Array_AppendPairP9Asn1Array9ASN1_TypePv9ASN1_TypePv" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Asn1Array_AppendPair Appends a pair of ASN.1 elements into an existing Asn1Array</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A pair is modeled as an <code class="docutils literal notranslate"><span class="pre">SEQUENCE</span></code> ASN1 tag with two elements. </p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>array</strong> – Asn1Array array to append </p></li>
+<li><p><strong>first_type</strong> – First element’s type </p></li>
+<li><p><strong>first_value</strong> – First element’s value </p></li>
+<li><p><strong>second_type</strong> – Second element’s type </p></li>
+<li><p><strong>second_value</strong> – Second element’s value* </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>status return status</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv418MinSignedIntLengthi">
+<span id="_CPPv318MinSignedIntLengthi"></span><span id="_CPPv218MinSignedIntLengthi"></span><span id="MinSignedIntLength__i"></span><span class="target" id="group__JSONp__ASN1_1ga6f0c80e902b25aa27804cb2c90f6ac84"></span><span class="kt"><span class="pre">unsigned</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MinSignedIntLength</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">number</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418MinSignedIntLengthi" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Return the minimum number of bytes needed to represent a signed integer</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>number</strong> – Signed integer </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>minimum number of bytes to represet the number </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv421Asn1Array_WriteToFileP9Asn1ArrayP9JSONpArgs">
+<span id="_CPPv321Asn1Array_WriteToFileP9Asn1ArrayP9JSONpArgs"></span><span id="_CPPv221Asn1Array_WriteToFileP9Asn1ArrayP9JSONpArgs"></span><span id="Asn1Array_WriteToFile__Asn1ArrayP.JSONpArgsP"></span><span class="target" id="group__JSONp__ASN1_1gab2bf76911fc8046e4846627a8d88057a"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">Asn1Array_WriteToFile</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">Asn1Array</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">array</span></span>, <span class="n"><span class="pre">JSONpArgs</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">jsonp_args</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421Asn1Array_WriteToFileP9Asn1ArrayP9JSONpArgs" title="Permalink to this definition"></a><br /></dt>
+<dd><p>Write an binary Asn1Array to a file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>array</strong> – Asn1Array </p></li>
+<li><p><strong>jsonp_args</strong> – JSONp command-line arguments </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>int Exit status </p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</dd></dl>
+
 </section>
 </section>
 

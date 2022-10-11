@@ -13,8 +13,10 @@ Welcome to jsonpacker's documentation!
    :hidden:
    :maxdepth: 2
    :caption: Contents
+   :includehidden:
 
    api
+
 
 Indices and tables
 ==================
